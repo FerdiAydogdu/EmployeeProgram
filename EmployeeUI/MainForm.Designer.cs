@@ -1,6 +1,6 @@
 ﻿namespace EmployeeUI
 {
-    partial class Form1
+    partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -21,7 +21,7 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panelMenu = new Panel();
             button3 = new Button();
             button1 = new Button();
@@ -29,6 +29,9 @@
             panelLogo = new Panel();
             label1 = new Label();
             panelTitleBar = new Panel();
+            btnClose = new Button();
+            btnMaximize = new Button();
+            btnMinimize = new Button();
             lblTitle = new Label();
             panelDesktopPane = new Panel();
             panelMenu.SuspendLayout();
@@ -130,6 +133,9 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            panelTitleBar.Controls.Add(btnClose);
+            panelTitleBar.Controls.Add(btnMaximize);
+            panelTitleBar.Controls.Add(btnMinimize);
             panelTitleBar.Controls.Add(lblTitle);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(220, 0);
@@ -137,8 +143,45 @@
             panelTitleBar.Size = new Size(980, 80);
             panelTitleBar.TabIndex = 2;
             // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = (Image)resources.GetObject("btnClose.Image");
+            btnClose.Location = new Point(945, 10);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(30, 30);
+            btnClose.TabIndex = 3;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Image = (Image)resources.GetObject("btnMaximize.Image");
+            btnMaximize.Location = new Point(910, 10);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(30, 30);
+            btnMaximize.TabIndex = 2;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Image = (Image)resources.GetObject("btnMinimize.Image");
+            btnMinimize.Location = new Point(875, 10);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(30, 30);
+            btnMinimize.TabIndex = 1;
+            btnMinimize.UseVisualStyleBackColor = true;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
             // lblTitle
             // 
+            lblTitle.Anchor = AnchorStyles.Top;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.White;
@@ -156,7 +199,7 @@
             panelDesktopPane.Size = new Size(980, 470);
             panelDesktopPane.TabIndex = 3;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -164,7 +207,8 @@
             Controls.Add(panelDesktopPane);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Personel Takip Formu";
             panelMenu.ResumeLayout(false);
@@ -185,5 +229,8 @@
         private Label lblTitle;
         private Label label1;
         private Panel panelDesktopPane;
+        private Button btnClose;
+        private Button btnMaximize;
+        private Button btnMinimize;
     }
 }

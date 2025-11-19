@@ -40,14 +40,15 @@
             label1.TabIndex = 0;
             label1.Text = "form1";
             // 
-            // Form2
+            // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
-            Name = "Form2";
+            Name = "EmployeeForm";
             Text = "Form2";
+            Load += EmployeeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

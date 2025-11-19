@@ -1,13 +1,13 @@
 namespace EmployeeUI
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         // 10:24
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             random = new Random();
@@ -90,6 +90,24 @@ namespace EmployeeUI
         private void button3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
