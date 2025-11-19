@@ -1,6 +1,3 @@
-using System;
-using System.Reflection.Metadata.Ecma335;
-
 namespace EmployeeUI
 {
     public partial class Form1 : Form
@@ -9,6 +6,7 @@ namespace EmployeeUI
         private Button currentButton;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +37,7 @@ namespace EmployeeUI
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    //panelTitleBar.BackColor = color;
+                    panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
@@ -61,14 +59,32 @@ namespace EmployeeUI
             }
         }
 
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelDesktopPane.Controls.Add(childForm);
+            this.panelDesktopPane.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
+        }
+
         private void btnMainEmployee_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            //ActivateButton(sender);
+            OpenChildForm(new EmployeeForm(), sender);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            //ActivateButton(sender);
+            OpenChildForm(new Form3(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -2,9 +2,6 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -22,88 +19,22 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            btnDepartment = new Button();
-            btnEmployee = new Button();
-            tabPage2 = new TabPage();
-            button2 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelMenu = new Panel();
             button3 = new Button();
             button1 = new Button();
             btnMainEmployee = new Button();
             panelLogo = new Panel();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            label1 = new Label();
+            panelTitleBar = new Panel();
+            lblTitle = new Label();
+            panelDesktopPane = new Panel();
             panelMenu.SuspendLayout();
+            panelLogo.SuspendLayout();
+            panelTitleBar.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(730, 307);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(455, 181);
-            tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(btnDepartment);
-            tabPage1.Controls.Add(btnEmployee);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(447, 148);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Kayıt";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnDepartment
-            // 
-            btnDepartment.Location = new Point(6, 42);
-            btnDepartment.Name = "btnDepartment";
-            btnDepartment.Size = new Size(150, 30);
-            btnDepartment.TabIndex = 1;
-            btnDepartment.Text = "Personel Bölümleri";
-            btnDepartment.UseVisualStyleBackColor = true;
-            // 
-            // btnEmployee
-            // 
-            btnEmployee.Location = new Point(6, 6);
-            btnEmployee.Name = "btnEmployee";
-            btnEmployee.Size = new Size(150, 30);
-            btnEmployee.TabIndex = 1;
-            btnEmployee.Text = "Personel Listesi";
-            btnEmployee.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(button2);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(447, 148);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(6, 6);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
             // 
             // panelMenu
             // 
@@ -124,7 +55,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.Gainsboro;
-            button3.Image = Properties.Resources.Employee;
+            button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(0, 200);
             button3.Name = "button3";
@@ -143,7 +74,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Gainsboro;
-            button1.Image = Properties.Resources.Employee;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(0, 140);
             button1.Name = "button1";
@@ -162,7 +93,7 @@
             btnMainEmployee.FlatAppearance.BorderSize = 0;
             btnMainEmployee.FlatStyle = FlatStyle.Flat;
             btnMainEmployee.ForeColor = Color.Gainsboro;
-            btnMainEmployee.Image = Properties.Resources.Employee;
+            btnMainEmployee.Image = (Image)resources.GetObject("btnMainEmployee.Image");
             btnMainEmployee.ImageAlign = ContentAlignment.MiddleLeft;
             btnMainEmployee.Location = new Point(0, 80);
             btnMainEmployee.Name = "btnMainEmployee";
@@ -178,41 +109,81 @@
             // panelLogo
             // 
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panelLogo.Controls.Add(label1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(220, 80);
             panelLogo.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.LightGray;
+            label1.Location = new Point(20, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(179, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Employee Program";
+            // 
+            // panelTitleBar
+            // 
+            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            panelTitleBar.Controls.Add(lblTitle);
+            panelTitleBar.Dock = DockStyle.Top;
+            panelTitleBar.Location = new Point(220, 0);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.Size = new Size(980, 80);
+            panelTitleBar.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(430, 25);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(88, 29);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "HOME";
+            // 
+            // panelDesktopPane
+            // 
+            panelDesktopPane.Dock = DockStyle.Fill;
+            panelDesktopPane.Location = new Point(220, 80);
+            panelDesktopPane.Name = "panelDesktopPane";
+            panelDesktopPane.Size = new Size(980, 470);
+            panelDesktopPane.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1235, 550);
+            ClientSize = new Size(1200, 550);
+            Controls.Add(panelDesktopPane);
+            Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
-            Controls.Add(tabControl1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Personel Takip Formu";
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            panelLogo.PerformLayout();
+            panelTitleBar.ResumeLayout(false);
+            panelTitleBar.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private Button btnEmployee;
-        private Button button2;
-        private Button btnDepartment;
         private Panel panelMenu;
         private Panel panelLogo;
         private Button btnMainEmployee;
         private Button button3;
         private Button button1;
+        private Panel panelTitleBar;
+        private Label lblTitle;
+        private Label label1;
+        private Panel panelDesktopPane;
     }
 }
