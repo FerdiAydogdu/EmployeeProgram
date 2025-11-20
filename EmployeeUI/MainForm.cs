@@ -1,8 +1,7 @@
 namespace EmployeeUI
 {
     public partial class MainForm : Form
-    {
-        // 10:24
+    {        
         private Button currentButton;
         private Random random;
         private int tempIndex;
@@ -84,7 +83,7 @@ namespace EmployeeUI
         private void button1_Click(object sender, EventArgs e)
         {
             //ActivateButton(sender);
-            OpenChildForm(new Form3(), sender);
+            OpenChildForm(new Department(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)

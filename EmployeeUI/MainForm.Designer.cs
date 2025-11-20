@@ -24,7 +24,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panelMenu = new Panel();
             button3 = new Button();
-            button1 = new Button();
+            btnMainDepartment = new Button();
             btnMainEmployee = new Button();
             panelLogo = new Panel();
             label1 = new Label();
@@ -43,7 +43,7 @@
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
             panelMenu.Controls.Add(button3);
-            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnMainDepartment);
             panelMenu.Controls.Add(btnMainEmployee);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
@@ -71,24 +71,24 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button1
+            // btnMainDepartment
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Gainsboro;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 140);
-            button1.Name = "button1";
-            button1.Padding = new Padding(12, 0, 0, 0);
-            button1.Size = new Size(220, 60);
-            button1.TabIndex = 2;
-            button1.Text = "Employee";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnMainDepartment.Dock = DockStyle.Top;
+            btnMainDepartment.FlatAppearance.BorderSize = 0;
+            btnMainDepartment.FlatStyle = FlatStyle.Flat;
+            btnMainDepartment.ForeColor = Color.Gainsboro;
+            btnMainDepartment.Image = (Image)resources.GetObject("btnMainDepartment.Image");
+            btnMainDepartment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMainDepartment.Location = new Point(0, 140);
+            btnMainDepartment.Name = "btnMainDepartment";
+            btnMainDepartment.Padding = new Padding(12, 0, 0, 0);
+            btnMainDepartment.Size = new Size(220, 60);
+            btnMainDepartment.TabIndex = 2;
+            btnMainDepartment.Text = "Department";
+            btnMainDepartment.TextAlign = ContentAlignment.MiddleLeft;
+            btnMainDepartment.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMainDepartment.UseVisualStyleBackColor = true;
+            btnMainDepartment.Click += button1_Click;
             // 
             // btnMainEmployee
             // 
@@ -224,7 +224,7 @@
         private Panel panelLogo;
         private Button btnMainEmployee;
         private Button button3;
-        private Button button1;
+        private Button btnMainDepartment;
         private Panel panelTitleBar;
         private Label lblTitle;
         private Label label1;

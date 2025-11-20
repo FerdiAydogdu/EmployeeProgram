@@ -1,6 +1,6 @@
 ﻿namespace EmployeeUI
 {
-    partial class Form3
+    partial class Department
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnDepartment = new Button();
+            textBox1 = new TextBox();
             label1 = new Label();
             SuspendLayout();
+            // 
+            // btnDepartment
+            // 
+            btnDepartment.Location = new Point(20, 66);
+            btnDepartment.Name = "btnDepartment";
+            btnDepartment.Size = new Size(260, 29);
+            btnDepartment.TabIndex = 0;
+            btnDepartment.Text = "Kaydet";
+            btnDepartment.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(130, 20);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 27);
+            textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(143, 90);
+            label1.Location = new Point(20, 20);
             label1.Name = "label1";
-            label1.Size = new Size(93, 20);
-            label1.TabIndex = 0;
-            label1.Text = "formmmmm";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Bölüm Adı";
             // 
-            // Form3
+            // Department
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(306, 112);
             Controls.Add(label1);
-            Name = "Form3";
-            Text = "Form3";
+            Controls.Add(textBox1);
+            Controls.Add(btnDepartment);
+            Name = "Department";
+            Text = "Bölümler";
+            Load += Department_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button btnDepartment;
+        private TextBox textBox1;
         private Label label1;
     }
 }

@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            btnEmployee = new Button();
             SuspendLayout();
             // 
-            // label1
+            // btnEmployee
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(158, 125);
-            label1.Name = "label1";
-            label1.Size = new Size(49, 20);
-            label1.TabIndex = 0;
-            label1.Text = "form1";
+            btnEmployee.Location = new Point(12, 409);
+            btnEmployee.Name = "btnEmployee";
+            btnEmployee.Size = new Size(141, 29);
+            btnEmployee.TabIndex = 0;
+            btnEmployee.Text = "Personel Listesi";
+            btnEmployee.UseVisualStyleBackColor = true;
             // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(btnEmployee);
             Name = "EmployeeForm";
             Text = "Form2";
             Load += EmployeeForm_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Button btnEmployee;
     }
 }
