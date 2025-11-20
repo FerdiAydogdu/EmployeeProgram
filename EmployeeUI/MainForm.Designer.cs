@@ -21,93 +21,34 @@
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            panelMenu = new Panel();
-            button3 = new Button();
-            btnMainDepartment = new Button();
-            btnMainEmployee = new Button();
             panelLogo = new Panel();
             label1 = new Label();
+            panelDepartment = new FlowLayoutPanel();
+            btnDepartment = new Button();
+            btnListDepartment = new Button();
+            btnSaveDepartment = new Button();
+            panelEmployee = new FlowLayoutPanel();
+            btnEmployee = new Button();
+            btnListEmployee = new Button();
+            btnSaveEmployee = new Button();
             panelTitleBar = new Panel();
             btnClose = new Button();
             btnMaximize = new Button();
             btnMinimize = new Button();
             lblTitle = new Label();
             panelDesktopPane = new Panel();
-            panelMenu.SuspendLayout();
+            panelMenu = new FlowLayoutPanel();
+            transitionEmployee = new System.Windows.Forms.Timer(components);
+            transitionDepartment = new System.Windows.Forms.Timer(components);
+            sidebarEmployee = new System.Windows.Forms.Timer(components);
             panelLogo.SuspendLayout();
+            panelDepartment.SuspendLayout();
+            panelEmployee.SuspendLayout();
             panelTitleBar.SuspendLayout();
+            panelMenu.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelMenu
-            // 
-            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
-            panelMenu.Controls.Add(button3);
-            panelMenu.Controls.Add(btnMainDepartment);
-            panelMenu.Controls.Add(btnMainEmployee);
-            panelMenu.Controls.Add(panelLogo);
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 0);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 550);
-            panelMenu.TabIndex = 1;
-            // 
-            // button3
-            // 
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.Gainsboro;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(0, 200);
-            button3.Name = "button3";
-            button3.Padding = new Padding(12, 0, 0, 0);
-            button3.Size = new Size(220, 60);
-            button3.TabIndex = 3;
-            button3.Text = "Employee";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // btnMainDepartment
-            // 
-            btnMainDepartment.Dock = DockStyle.Top;
-            btnMainDepartment.FlatAppearance.BorderSize = 0;
-            btnMainDepartment.FlatStyle = FlatStyle.Flat;
-            btnMainDepartment.ForeColor = Color.Gainsboro;
-            btnMainDepartment.Image = (Image)resources.GetObject("btnMainDepartment.Image");
-            btnMainDepartment.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMainDepartment.Location = new Point(0, 140);
-            btnMainDepartment.Name = "btnMainDepartment";
-            btnMainDepartment.Padding = new Padding(12, 0, 0, 0);
-            btnMainDepartment.Size = new Size(220, 60);
-            btnMainDepartment.TabIndex = 2;
-            btnMainDepartment.Text = "Department";
-            btnMainDepartment.TextAlign = ContentAlignment.MiddleLeft;
-            btnMainDepartment.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMainDepartment.UseVisualStyleBackColor = true;
-            btnMainDepartment.Click += button1_Click;
-            // 
-            // btnMainEmployee
-            // 
-            btnMainEmployee.Dock = DockStyle.Top;
-            btnMainEmployee.FlatAppearance.BorderSize = 0;
-            btnMainEmployee.FlatStyle = FlatStyle.Flat;
-            btnMainEmployee.ForeColor = Color.Gainsboro;
-            btnMainEmployee.Image = (Image)resources.GetObject("btnMainEmployee.Image");
-            btnMainEmployee.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMainEmployee.Location = new Point(0, 80);
-            btnMainEmployee.Name = "btnMainEmployee";
-            btnMainEmployee.Padding = new Padding(12, 0, 0, 0);
-            btnMainEmployee.Size = new Size(220, 60);
-            btnMainEmployee.TabIndex = 1;
-            btnMainEmployee.Text = "Employee";
-            btnMainEmployee.TextAlign = ContentAlignment.MiddleLeft;
-            btnMainEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMainEmployee.UseVisualStyleBackColor = true;
-            btnMainEmployee.Click += btnMainEmployee_Click;
             // 
             // panelLogo
             // 
@@ -115,6 +56,7 @@
             panelLogo.Controls.Add(label1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(220, 80);
             panelLogo.TabIndex = 0;
@@ -129,6 +71,142 @@
             label1.Size = new Size(179, 28);
             label1.TabIndex = 0;
             label1.Text = "Employee Program";
+            // 
+            // panelDepartment
+            // 
+            panelDepartment.Controls.Add(btnDepartment);
+            panelDepartment.Controls.Add(btnListDepartment);
+            panelDepartment.Controls.Add(btnSaveDepartment);
+            panelDepartment.Location = new Point(0, 80);
+            panelDepartment.Margin = new Padding(0);
+            panelDepartment.Name = "panelDepartment";
+            panelDepartment.Size = new Size(220, 60);
+            panelDepartment.TabIndex = 2;
+            // 
+            // btnDepartment
+            // 
+            btnDepartment.Dock = DockStyle.Top;
+            btnDepartment.FlatAppearance.BorderSize = 0;
+            btnDepartment.FlatStyle = FlatStyle.Flat;
+            btnDepartment.ForeColor = Color.Gainsboro;
+            btnDepartment.Image = (Image)resources.GetObject("btnDepartment.Image");
+            btnDepartment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDepartment.Location = new Point(3, 3);
+            btnDepartment.Name = "btnDepartment";
+            btnDepartment.Padding = new Padding(12, 0, 0, 0);
+            btnDepartment.Size = new Size(220, 60);
+            btnDepartment.TabIndex = 3;
+            btnDepartment.Text = "Bölüm";
+            btnDepartment.TextAlign = ContentAlignment.MiddleLeft;
+            btnDepartment.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDepartment.UseVisualStyleBackColor = true;
+            btnDepartment.Click += btnDepartment_Click;
+            // 
+            // btnListDepartment
+            // 
+            btnListDepartment.Dock = DockStyle.Top;
+            btnListDepartment.FlatAppearance.BorderSize = 0;
+            btnListDepartment.FlatStyle = FlatStyle.Flat;
+            btnListDepartment.ForeColor = Color.Gainsboro;
+            btnListDepartment.Image = (Image)resources.GetObject("btnListDepartment.Image");
+            btnListDepartment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnListDepartment.Location = new Point(3, 69);
+            btnListDepartment.Name = "btnListDepartment";
+            btnListDepartment.Padding = new Padding(12, 0, 0, 0);
+            btnListDepartment.Size = new Size(220, 60);
+            btnListDepartment.TabIndex = 5;
+            btnListDepartment.Text = "Bölüm Listesi";
+            btnListDepartment.TextAlign = ContentAlignment.MiddleLeft;
+            btnListDepartment.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnListDepartment.UseVisualStyleBackColor = true;
+            btnListDepartment.Click += btnListDepartment_Click;
+            // 
+            // btnSaveDepartment
+            // 
+            btnSaveDepartment.Dock = DockStyle.Top;
+            btnSaveDepartment.FlatAppearance.BorderSize = 0;
+            btnSaveDepartment.FlatStyle = FlatStyle.Flat;
+            btnSaveDepartment.ForeColor = Color.Gainsboro;
+            btnSaveDepartment.Image = (Image)resources.GetObject("btnSaveDepartment.Image");
+            btnSaveDepartment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaveDepartment.Location = new Point(3, 135);
+            btnSaveDepartment.Name = "btnSaveDepartment";
+            btnSaveDepartment.Padding = new Padding(12, 0, 0, 0);
+            btnSaveDepartment.Size = new Size(220, 60);
+            btnSaveDepartment.TabIndex = 4;
+            btnSaveDepartment.Text = "Bölüm Ekle";
+            btnSaveDepartment.TextAlign = ContentAlignment.MiddleLeft;
+            btnSaveDepartment.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSaveDepartment.UseVisualStyleBackColor = true;
+            btnSaveDepartment.Click += btnSaveDepartment_Click;
+            // 
+            // panelEmployee
+            // 
+            panelEmployee.Controls.Add(btnEmployee);
+            panelEmployee.Controls.Add(btnListEmployee);
+            panelEmployee.Controls.Add(btnSaveEmployee);
+            panelEmployee.Location = new Point(0, 140);
+            panelEmployee.Margin = new Padding(0);
+            panelEmployee.Name = "panelEmployee";
+            panelEmployee.Size = new Size(220, 60);
+            panelEmployee.TabIndex = 1;
+            // 
+            // btnEmployee
+            // 
+            btnEmployee.Dock = DockStyle.Top;
+            btnEmployee.FlatAppearance.BorderSize = 0;
+            btnEmployee.FlatStyle = FlatStyle.Flat;
+            btnEmployee.ForeColor = Color.Gainsboro;
+            btnEmployee.Image = (Image)resources.GetObject("btnEmployee.Image");
+            btnEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmployee.Location = new Point(3, 3);
+            btnEmployee.Name = "btnEmployee";
+            btnEmployee.Padding = new Padding(12, 0, 0, 0);
+            btnEmployee.Size = new Size(220, 60);
+            btnEmployee.TabIndex = 2;
+            btnEmployee.Text = "Personel";
+            btnEmployee.TextAlign = ContentAlignment.MiddleLeft;
+            btnEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEmployee.UseVisualStyleBackColor = true;
+            btnEmployee.Click += btnEmployee_Click;
+            // 
+            // btnListEmployee
+            // 
+            btnListEmployee.Dock = DockStyle.Top;
+            btnListEmployee.FlatAppearance.BorderSize = 0;
+            btnListEmployee.FlatStyle = FlatStyle.Flat;
+            btnListEmployee.ForeColor = Color.Gainsboro;
+            btnListEmployee.Image = (Image)resources.GetObject("btnListEmployee.Image");
+            btnListEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            btnListEmployee.Location = new Point(3, 69);
+            btnListEmployee.Name = "btnListEmployee";
+            btnListEmployee.Padding = new Padding(12, 0, 0, 0);
+            btnListEmployee.Size = new Size(220, 60);
+            btnListEmployee.TabIndex = 4;
+            btnListEmployee.Text = "Personel Listesi";
+            btnListEmployee.TextAlign = ContentAlignment.MiddleLeft;
+            btnListEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnListEmployee.UseVisualStyleBackColor = true;
+            btnListEmployee.Click += btnListEmployee_Click;
+            // 
+            // btnSaveEmployee
+            // 
+            btnSaveEmployee.Dock = DockStyle.Top;
+            btnSaveEmployee.FlatAppearance.BorderSize = 0;
+            btnSaveEmployee.FlatStyle = FlatStyle.Flat;
+            btnSaveEmployee.ForeColor = Color.Gainsboro;
+            btnSaveEmployee.Image = (Image)resources.GetObject("btnSaveEmployee.Image");
+            btnSaveEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaveEmployee.Location = new Point(3, 135);
+            btnSaveEmployee.Name = "btnSaveEmployee";
+            btnSaveEmployee.Padding = new Padding(12, 0, 0, 0);
+            btnSaveEmployee.Size = new Size(220, 60);
+            btnSaveEmployee.TabIndex = 3;
+            btnSaveEmployee.Text = "Personel Ekle";
+            btnSaveEmployee.TextAlign = ContentAlignment.MiddleLeft;
+            btnSaveEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSaveEmployee.UseVisualStyleBackColor = true;
+            btnSaveEmployee.Click += btnSaveEmployee_Click;
             // 
             // panelTitleBar
             // 
@@ -199,6 +277,32 @@
             panelDesktopPane.Size = new Size(980, 470);
             panelDesktopPane.TabIndex = 3;
             // 
+            // panelMenu
+            // 
+            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(panelLogo);
+            panelMenu.Controls.Add(panelDepartment);
+            panelMenu.Controls.Add(panelEmployee);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(220, 550);
+            panelMenu.TabIndex = 1;
+            // 
+            // transitionEmployee
+            // 
+            transitionEmployee.Interval = 5;
+            transitionEmployee.Tick += menuTransition_Tick;
+            // 
+            // transitionDepartment
+            // 
+            transitionDepartment.Interval = 5;
+            transitionDepartment.Tick += transitionDepartment_Tick;
+            // 
+            // sidebarEmployee
+            // 
+            sidebarEmployee.Interval = 5;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -211,20 +315,18 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Personel Takip Formu";
-            panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
+            panelDepartment.ResumeLayout(false);
+            panelEmployee.ResumeLayout(false);
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
+            panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panelMenu;
         private Panel panelLogo;
-        private Button btnMainEmployee;
-        private Button button3;
-        private Button btnMainDepartment;
         private Panel panelTitleBar;
         private Label lblTitle;
         private Label label1;
@@ -232,5 +334,17 @@
         private Button btnClose;
         private Button btnMaximize;
         private Button btnMinimize;
+        private Button btnListEmployee;
+        private Button btnSaveEmployee;
+        private Button btnEmployee;
+        private System.Windows.Forms.Timer transitionEmployee;
+        private Button btnListDepartment;
+        private Button btnSaveDepartment;
+        private Button btnDepartment;
+        private System.Windows.Forms.Timer transitionDepartment;
+        private System.Windows.Forms.Timer sidebarEmployee;
+        private FlowLayoutPanel panelEmployee;
+        private FlowLayoutPanel panelDepartment;
+        private FlowLayoutPanel panelMenu;
     }
 }

@@ -1,7 +1,7 @@
 namespace EmployeeUI
 {
     public partial class MainForm : Form
-    {        
+    {
         private Button currentButton;
         private Random random;
         private int tempIndex;
@@ -74,23 +74,6 @@ namespace EmployeeUI
             lblTitle.Text = childForm.Text;
         }
 
-        private void btnMainEmployee_Click(object sender, EventArgs e)
-        {
-            //ActivateButton(sender);
-            OpenChildForm(new EmployeeForm(), sender);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //ActivateButton(sender);
-            OpenChildForm(new Department(), sender);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -107,6 +90,87 @@ namespace EmployeeUI
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        bool menuExpand = false;
+        bool menuExpandDepartment = false;
+        private void menuTransition_Tick(object sender, EventArgs e)
+        {
+            if (!menuExpand)
+            {
+                panelEmployee.Height += 10;
+                if (panelEmployee.Height >= 185)
+                {
+                    transitionEmployee.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                panelEmployee.Height -= 10;
+                if (panelEmployee.Height <= 60)
+                {
+                    transitionEmployee.Stop();
+                    menuExpand = false;
+                }
+            }
+        }
+
+        private void transitionDepartment_Tick(object sender, EventArgs e)
+        {
+            if (!menuExpandDepartment)
+            {
+                panelDepartment.Height += 10;
+                if (panelDepartment.Height >= 185)
+                {
+                    transitionDepartment.Stop();
+                    menuExpandDepartment = true;
+                }
+            }
+            else
+            {
+                panelDepartment.Height -= 10;
+                if (panelDepartment.Height <= 60)
+                {
+                    transitionDepartment.Stop();
+                    menuExpandDepartment = false;
+                }
+            }
+        }
+
+        private void btnDepartment_Click(object sender, EventArgs e)
+        {
+            transitionDepartment.Start();
+            //ActivateButton(sender);
+            
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            transitionEmployee.Start();
+            //ActivateButton(sender);
+            
+        }
+
+        private void btnListDepartment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveDepartment_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Department(), sender);
+        }
+
+        private void btnListEmployee_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSaveEmployee_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new EmployeeForm(), sender);
         }
     }
 }
