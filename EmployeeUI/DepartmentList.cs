@@ -1,18 +1,17 @@
-﻿using DataAccess.Concrete.EntityFramework.Context;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Business.Abstract;
+using DataAccess.Concrete.EntityFramework.Context;
 
 namespace EmployeeUI
 {
     public partial class DepartmentList : Form
     {
+        private readonly IDepartmentService _departmentService;
+
+        public DepartmentList(IDepartmentService departmentService)
+        {
+            _departmentService = departmentService;
+        }
+
         public DepartmentList()
         {
             InitializeComponent();
@@ -20,9 +19,14 @@ namespace EmployeeUI
 
         private void DepartmentList_Load(object sender, EventArgs e)
         {
-            EmployeeDbContext context = new EmployeeDbContext();
-            var result = context.Departments.ToList();
+            // Data access bağımlılığını azaltmak için Business katmanını kullandım.
 
+            //EmployeeDbContext context = new EmployeeDbContext();
+            //var result = context.Departments.ToList();
+
+            //dgwDepartmentList.DataSource = result;
+
+            var result = _departmentService.GetList();
             dgwDepartmentList.DataSource = result;
         }
     }
