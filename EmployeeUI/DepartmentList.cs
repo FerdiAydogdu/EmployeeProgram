@@ -9,12 +9,8 @@ namespace EmployeeUI
 
         public DepartmentList(IDepartmentService departmentService)
         {
-            _departmentService = departmentService;
-        }
-
-        public DepartmentList()
-        {
             InitializeComponent();
+            _departmentService = departmentService;
         }
 
         private void DepartmentList_Load(object sender, EventArgs e)

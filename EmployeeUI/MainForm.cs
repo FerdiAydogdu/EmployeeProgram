@@ -1,3 +1,5 @@
+using Business.Abstract;
+
 namespace EmployeeUI
 {
     public partial class MainForm : Form
@@ -6,9 +8,13 @@ namespace EmployeeUI
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public MainForm()
+
+        private readonly IDepartmentService _departmentService;
+
+        public MainForm(IDepartmentService departmentService)
         {
             InitializeComponent();
+            _departmentService = departmentService;
             random = new Random();
         }
 
@@ -155,7 +161,7 @@ namespace EmployeeUI
 
         private void btnListDepartment_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new DepartmentList(), sender);
+            OpenChildForm(new DepartmentList(_departmentService), sender);
         }
 
         private void btnSaveDepartment_Click(object sender, EventArgs e)
