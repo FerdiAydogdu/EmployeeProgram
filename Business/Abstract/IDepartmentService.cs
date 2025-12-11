@@ -3,7 +3,11 @@
 namespace Business.Abstract
 {
     public interface IDepartmentService
-    {
+    {        
         List<Department> GetList();
+        bool Add(Department department);
+        void Delete(Department department);
+        void Update(Department department);
+        Department GetById(int departmentId);
     }
 }

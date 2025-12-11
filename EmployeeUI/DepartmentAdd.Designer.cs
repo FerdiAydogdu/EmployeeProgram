@@ -1,6 +1,6 @@
 ﻿namespace EmployeeUI
 {
-    partial class Department
+    partial class DepartmentAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnDepartment = new Button();
-            textBox1 = new TextBox();
+            txtDepartmentName = new TextBox();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -41,13 +41,14 @@
             btnDepartment.TabIndex = 0;
             btnDepartment.Text = "Kaydet";
             btnDepartment.UseVisualStyleBackColor = true;
+            btnDepartment.Click += btnDepartment_Click;
             // 
-            // textBox1
+            // txtDepartmentName
             // 
-            textBox1.Location = new Point(130, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 27);
-            textBox1.TabIndex = 1;
+            txtDepartmentName.Location = new Point(130, 20);
+            txtDepartmentName.Name = "txtDepartmentName";
+            txtDepartmentName.Size = new Size(150, 27);
+            txtDepartmentName.TabIndex = 1;
             // 
             // label1
             // 
@@ -64,7 +65,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(306, 112);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtDepartmentName);
             Controls.Add(btnDepartment);
             Name = "Department";
             Text = "Bölümler";
@@ -76,7 +77,7 @@
         #endregion
 
         private Button btnDepartment;
-        private TextBox textBox1;
+        private TextBox txtDepartmentName;
         private Label label1;
     }
 }

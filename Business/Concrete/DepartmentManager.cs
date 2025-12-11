@@ -14,9 +14,30 @@ namespace Business.Concrete
             _departmentDal = departmentDal;
         }
 
+        public bool Add(Department department)
+        {
+            _departmentDal.Add(department);
+            return true;
+        }
+
+        public void Delete(Department department)
+        {
+            _departmentDal.Delete(department);
+        }
+
+        public Department GetById(int departmentId)
+        {
+            return _departmentDal.GetById(departmentId);
+        }
+
         public List<Department> GetList()
         {
             return _departmentDal.GetList();
+        }
+
+        public void Update(Department department)
+        {
+            _departmentDal.Update(department);
         }
     }
 }

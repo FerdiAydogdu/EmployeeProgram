@@ -166,7 +166,7 @@ namespace EmployeeUI
 
         private void btnSaveDepartment_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Department(), sender);
+            OpenChildForm(new DepartmentAdd(_departmentService), sender);
         }
 
         private void btnListEmployee_Click(object sender, EventArgs e)
