@@ -44,13 +44,8 @@ namespace EmployeeUI
 
             var result = _departmentService.Add(department);
 
-            if (result)
-            {
-                MessageBox.Show("Bölüm başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
-            }                           
-            else            
-                MessageBox.Show("Bir hatayla karşılaşıldı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);                        
+            if (result)                          
+                Clear();                                                         
         }
 
         void Clear()

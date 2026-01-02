@@ -7,7 +7,7 @@ namespace Business.Abstract
         List<Department> GetList();
         bool Add(Department department);
         void Delete(Department department);
-        void Update(Department department);
+        bool Update(Department department);
         Department GetById(int departmentId);
     }
 }

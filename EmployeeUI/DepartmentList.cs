@@ -1,7 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Concrete.EntityFramework.Context;
 using Entities.Concrete;
-using System.Windows.Forms;
 
 namespace EmployeeUI
 {
@@ -43,6 +42,21 @@ namespace EmployeeUI
                     {
                         var department = dgwDepartmentList.CurrentRow.DataBoundItem as Department;
                         _departmentService.Delete(department);
+                        GetList();
+                    }
+                }
+                if (dgwDepartmentList.Columns[e.ColumnIndex].Name == "colUpdate")
+                {
+                    int departmentId = Convert.ToInt32(dgwDepartmentList.CurrentRow.Cells["colId"].Value);
+                    string departmentName = dgwDepartmentList.CurrentRow.Cells["colName"].Value.ToString();
+
+                    var findDepartment = _departmentService.GetById(departmentId);
+
+                    findDepartment.Name = departmentName;
+                    var result = _departmentService.Update(findDepartment);
+
+                    if (result)
+                    {                        
                         GetList();
                     }
                 }

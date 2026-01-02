@@ -33,6 +33,7 @@
             colId = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
+            colUpdate = new DataGridViewButtonColumn();
             colDelete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgwDepartmentList).BeginInit();
             SuspendLayout();
@@ -42,7 +43,7 @@
             dgwDepartmentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwDepartmentList.BackgroundColor = Color.White;
             dgwDepartmentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwDepartmentList.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStatus, colDelete });
+            dgwDepartmentList.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStatus, colUpdate, colDelete });
             dgwDepartmentList.Dock = DockStyle.Fill;
             dgwDepartmentList.Location = new Point(0, 0);
             dgwDepartmentList.Name = "dgwDepartmentList";
@@ -66,7 +67,6 @@
             colName.HeaderText = "Bölüm Adı";
             colName.MinimumWidth = 6;
             colName.Name = "colName";
-            colName.ReadOnly = true;
             // 
             // colStatus
             // 
@@ -75,6 +75,14 @@
             colStatus.MinimumWidth = 6;
             colStatus.Name = "colStatus";
             colStatus.ReadOnly = true;
+            // 
+            // colUpdate
+            // 
+            colUpdate.HeaderText = "Güncelle";
+            colUpdate.MinimumWidth = 6;
+            colUpdate.Name = "colUpdate";
+            colUpdate.Text = "U";
+            colUpdate.UseColumnTextForButtonValue = true;
             // 
             // colDelete
             // 
@@ -110,6 +118,7 @@
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colStatus;
+        private DataGridViewButtonColumn colUpdate;
         private DataGridViewButtonColumn colDelete;
     }
 }
