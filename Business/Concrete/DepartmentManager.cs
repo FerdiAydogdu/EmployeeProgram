@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Validation.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using FluentValidation.Results;
@@ -18,26 +19,16 @@ namespace Business.Concrete
 
         public bool Add(Department department)
         {
-            DepartmentValidator validationRules = new DepartmentValidator();
-            ValidationResult validationResult = validationRules.Validate(department);
-            IList<ValidationFailure> failures = validationResult.Errors;
+            var validation = ValidationTool.Validate(new DepartmentValidator(), department);
 
-            if (!validationResult.IsValid)
-            {
-                foreach (ValidationFailure failure in failures)
-                {
-                    MessageBox.Show(failure.ErrorMessage, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                return false;
-            }
-
-            else
+            if (validation)
             {
                 _departmentDal.Add(department);
                 MessageBox.Show("Bölüm başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return true;
-            }                        
+            }
+            return false;
         }
 
         public void Delete(Department department)
@@ -57,25 +48,16 @@ namespace Business.Concrete
 
         public bool Update(Department department)
         {
-            DepartmentValidator validationRules = new DepartmentValidator();
-            ValidationResult validationResult = validationRules.Validate(department);
-            IList<ValidationFailure> failures = validationResult.Errors;
+            var validation = ValidationTool.Validate(new DepartmentValidator(), department);
 
-            if (!validationResult.IsValid)
-            {
-                foreach (ValidationFailure failure in failures)
-                {
-                    MessageBox.Show(failure.ErrorMessage, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                return false;
-            }
-            else
+            if (validation)
             {
                 _departmentDal.Update(department);
                 MessageBox.Show("Bölüm başarıyla güncellendi.", "Güncelleme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return true;
-            }           
+            }
+            return false;
         }
     }
 }
