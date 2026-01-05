@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +12,13 @@ using System.Windows.Forms;
 
 namespace EmployeeUI
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeAdd : Form
     {
-        public EmployeeForm()
+        IDepartmentService _departmentService;
+        public EmployeeAdd(IDepartmentService departmentService)
         {
             InitializeComponent();
+            _departmentService = departmentService;
         }
 
         private void LoadTheme()
@@ -37,6 +40,13 @@ namespace EmployeeUI
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             LoadTheme();
+
+            var departments = _departmentService.GetList();
+
+            foreach (var department in departments)
+            {
+                txtDepartment.Items.Add(department.Name);
+            }
         }
     }
 }

@@ -59,7 +59,7 @@
             label1.TabIndex = 2;
             label1.Text = "Bölüm Adı";
             // 
-            // Department
+            // DepartmentAdd
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -67,8 +67,8 @@
             Controls.Add(label1);
             Controls.Add(txtDepartmentName);
             Controls.Add(btnDepartment);
-            Name = "Department";
-            Text = "Bölümler";
+            Name = "DepartmentAdd";
+            Text = "Bölüm Ekleme Formu";
             Load += Department_Load;
             ResumeLayout(false);
             PerformLayout();

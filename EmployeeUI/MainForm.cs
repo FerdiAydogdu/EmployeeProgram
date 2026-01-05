@@ -1,4 +1,6 @@
 using Business.Abstract;
+using Entities.Concrete;
+using System.Security.Cryptography.X509Certificates;
 
 namespace EmployeeUI
 {
@@ -149,14 +151,14 @@ namespace EmployeeUI
         {
             transitionDepartment.Start();
             //ActivateButton(sender);
-            
+
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             transitionEmployee.Start();
             //ActivateButton(sender);
-            
+
         }
 
         private void btnListDepartment_Click(object sender, EventArgs e)
@@ -171,12 +173,12 @@ namespace EmployeeUI
 
         private void btnListEmployee_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSaveEmployee_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EmployeeForm(), sender);
+            OpenChildForm(new EmployeeAdd(_departmentService), sender);
         }
     }
 }
