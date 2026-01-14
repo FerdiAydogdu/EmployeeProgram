@@ -52,6 +52,7 @@
             btnEmployee.TabIndex = 0;
             btnEmployee.Text = "Personel Ekle";
             btnEmployee.UseVisualStyleBackColor = true;
+            btnEmployee.Click += btnEmployee_Click;
             // 
             // label1
             // 
@@ -155,6 +156,7 @@
             txtDepartment.Name = "txtDepartment";
             txtDepartment.Size = new Size(140, 28);
             txtDepartment.TabIndex = 16;
+            txtDepartment.SelectedIndexChanged += txtDepartment_SelectedIndexChanged;
             // 
             // EmployeeAdd
             // 

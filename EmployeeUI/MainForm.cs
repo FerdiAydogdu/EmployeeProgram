@@ -12,12 +12,14 @@ namespace EmployeeUI
         private Form activeForm;
 
         private readonly IDepartmentService _departmentService;
+        private readonly IEmployeeService _employeeService;
 
-        public MainForm(IDepartmentService departmentService)
+        public MainForm(IDepartmentService departmentService, IEmployeeService employeeService)
         {
             InitializeComponent();
             _departmentService = departmentService;
-            random = new Random();
+            _employeeService = employeeService;
+            random = new Random();            
         }
 
         private Color SelectThemeColor()
@@ -178,7 +180,7 @@ namespace EmployeeUI
 
         private void btnSaveEmployee_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EmployeeAdd(_departmentService), sender);
+            OpenChildForm(new EmployeeAdd(_departmentService, _employeeService), sender);
         }
     }
 }

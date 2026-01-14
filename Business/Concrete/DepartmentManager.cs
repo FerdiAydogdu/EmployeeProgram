@@ -41,6 +41,11 @@ namespace Business.Concrete
             return _departmentDal.GetById(departmentId);
         }
 
+        public int GetDepartmentIdByName(string departmentName)
+        {
+            return _departmentDal.GetList().Where(x => x.Name==departmentName).Select(s => s.Id).FirstOrDefault();
+        }
+
         public List<Department> GetList()
         {
             return _departmentDal.GetList();

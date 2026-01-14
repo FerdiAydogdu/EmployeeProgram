@@ -9,5 +9,6 @@ namespace Business.Abstract
         void Delete(Department department);
         bool Update(Department department);
         Department GetById(int departmentId);
+        int GetDepartmentIdByName(string departmentName);
     }
 }

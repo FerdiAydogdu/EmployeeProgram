@@ -15,7 +15,7 @@ namespace EmployeeUI
         {            
             ApplicationConfiguration.Initialize();
             Container = Configure();
-            Application.Run(new MainForm(Container.Resolve<IDepartmentService>()));
+            Application.Run(new MainForm(Container.Resolve<IDepartmentService>(), Container.Resolve<IEmployeeService>()));
         }
 
         // Dependency Injection Configuration
@@ -25,6 +25,10 @@ namespace EmployeeUI
 
             builder.RegisterType<DepartmentManager>().As<IDepartmentService>();
             builder.RegisterType<EfDepartmentDal>().As<IDepartmentDal>();
+
+            builder.RegisterType<EmployeeManager>().As<IEmployeeService>();
+            builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>();
+
             builder.RegisterType<MainForm>();
 
             return builder.Build();
