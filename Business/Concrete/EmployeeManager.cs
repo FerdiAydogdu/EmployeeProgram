@@ -16,7 +16,7 @@ namespace Business.Concrete
         private readonly IEmployeeDal _employeeDal;
         public EmployeeManager(IEmployeeDal employeeDal)
         {
-            _employeeDal = employeeDal; 
+            _employeeDal = employeeDal;
         }
 
         public bool Add(Employee employee)
@@ -25,11 +25,24 @@ namespace Business.Concrete
 
             if (validation)
             {
+                var result = _employeeDal.CheckIdentityNumber(employee.IdentityNumber);
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Bu TC Kimlik numarası zaten kayıtlı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
                 _employeeDal.Add(employee);
                 MessageBox.Show("Personel başarıyla eklendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
             return false;
+        }
+
+        public List<Employee> GetAll()
+        {
+            return _employeeDal.GetAll();
         }
     }
 }

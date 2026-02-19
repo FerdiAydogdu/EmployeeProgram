@@ -16,7 +16,9 @@ namespace Entities.Concrete
         public decimal Salary { get; set; }
         public DateTime StartingDate { get; set; }     
         public DateTime? EndingDate { get; set; }     
-        public string ReasonOfLeaving { get; set; }           
+        public string ReasonOfLeaving { get; set; }
+        public string IdentityNumber { get; set; }
+        public string Status { get; set; }
 
     }
 }

@@ -70,7 +70,9 @@ namespace EmployeeUI
                 DepartmentId = departmentId,
                 BirthDate = Convert.ToDateTime(dtpBirthDate.Value),
                 Salary = Convert.ToDecimal(txtSalary.Text),
-                StartingDate = Convert.ToDateTime(dtpStartingDate.Value)
+                StartingDate = Convert.ToDateTime(dtpStartingDate.Value),
+                IdentityNumber = txtIdentityNumber.Text,
+                Status = "Çalışıyor"
             };
 
             var result = _employeeService.Add(employee);

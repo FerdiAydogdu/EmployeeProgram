@@ -10,5 +10,6 @@ namespace Business.Abstract
     public interface IEmployeeService
     {
         bool Add(Employee employee);
+        List<Employee> GetAll();
     }
 }

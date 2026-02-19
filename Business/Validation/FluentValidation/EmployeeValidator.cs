@@ -19,6 +19,7 @@ namespace Business.Validation.FluentValidation
             RuleFor(r => r.Salary).GreaterThan(0).WithMessage("Personel maaşı asgari ücretten büyük olmalıdır!");
             RuleFor(r => r.BirthDate).LessThan(DateTime.Now.AddYears(-18)).WithMessage("Personel yaşı 18 yaşından büyük olmalıdır!");
             RuleFor(r => r.DepartmentId).GreaterThan(0).WithMessage("Personel departmanı seçilmelidir!");
+            RuleFor(r => r.IdentityNumber).NotEmpty().WithMessage("Tc Numarasaı boş olamaz!").MinimumLength(11).WithMessage("Tc Numarası 11 karakter olmalıdır!").MaximumLength(11).WithMessage("Tc Numarası 11 karakter olmalıdır!");
         }
     }
 }

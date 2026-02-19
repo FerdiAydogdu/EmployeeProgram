@@ -41,12 +41,14 @@
             dtpStartingDate = new DateTimePicker();
             txtSalary = new NumericUpDown();
             txtDepartment = new ComboBox();
+            label7 = new Label();
+            txtIdentityNumber = new TextBox();
             ((System.ComponentModel.ISupportInitialize)txtSalary).BeginInit();
             SuspendLayout();
             // 
             // btnEmployee
             // 
-            btnEmployee.Location = new Point(20, 220);
+            btnEmployee.Location = new Point(20, 250);
             btnEmployee.Name = "btnEmployee";
             btnEmployee.Size = new Size(300, 29);
             btnEmployee.TabIndex = 0;
@@ -158,11 +160,30 @@
             txtDepartment.TabIndex = 16;
             txtDepartment.SelectedIndexChanged += txtDepartment_SelectedIndexChanged;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(20, 200);
+            label7.Name = "label7";
+            label7.Size = new Size(29, 20);
+            label7.TabIndex = 17;
+            label7.Text = "T.C";
+            // 
+            // txtIdentityNumber
+            // 
+            txtIdentityNumber.Location = new Point(180, 200);
+            txtIdentityNumber.MaxLength = 11;
+            txtIdentityNumber.Name = "txtIdentityNumber";
+            txtIdentityNumber.Size = new Size(140, 27);
+            txtIdentityNumber.TabIndex = 18;
+            // 
             // EmployeeAdd
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(344, 271);
+            ClientSize = new Size(344, 301);
+            Controls.Add(txtIdentityNumber);
+            Controls.Add(label7);
             Controls.Add(txtDepartment);
             Controls.Add(txtSalary);
             Controls.Add(dtpStartingDate);
@@ -199,5 +220,7 @@
         private DateTimePicker dtpStartingDate;
         private NumericUpDown txtSalary;
         private ComboBox txtDepartment;
+        private Label label7;
+        private TextBox txtIdentityNumber;
     }
 }

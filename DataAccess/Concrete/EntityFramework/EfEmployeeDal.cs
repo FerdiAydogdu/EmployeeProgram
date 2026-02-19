@@ -19,5 +19,22 @@ namespace DataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
+
+        public int CheckIdentityNumber(string identityNumber)
+        {
+            using (var context = new EmployeeDbContext())
+            {
+                var result = context.Employees.Where(e => e.IdentityNumber == identityNumber);
+                return result.Count();
+            }
+        }
+
+        public List<Employee> GetAll()
+        {
+            using (var context = new EmployeeDbContext())
+            {
+                return context.Employees.ToList();
+            }
+        }
     }
 }
