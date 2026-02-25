@@ -35,6 +35,7 @@
             colStatus = new DataGridViewTextBoxColumn();
             colUpdate = new DataGridViewButtonColumn();
             colDelete = new DataGridViewButtonColumn();
+            colStatusUpdate = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgwDepartmentList).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             dgwDepartmentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgwDepartmentList.BackgroundColor = Color.White;
             dgwDepartmentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwDepartmentList.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStatus, colUpdate, colDelete });
+            dgwDepartmentList.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colStatus, colUpdate, colDelete, colStatusUpdate });
             dgwDepartmentList.Dock = DockStyle.Fill;
             dgwDepartmentList.Location = new Point(0, 0);
             dgwDepartmentList.Name = "dgwDepartmentList";
@@ -56,6 +57,7 @@
             // colId
             // 
             colId.DataPropertyName = "Id";
+            colId.FillWeight = 100.748665F;
             colId.HeaderText = "Id";
             colId.MinimumWidth = 6;
             colId.Name = "colId";
@@ -64,6 +66,7 @@
             // colName
             // 
             colName.DataPropertyName = "Name";
+            colName.FillWeight = 100.748665F;
             colName.HeaderText = "Bölüm Adı";
             colName.MinimumWidth = 6;
             colName.Name = "colName";
@@ -71,6 +74,7 @@
             // colStatus
             // 
             colStatus.DataPropertyName = "Status";
+            colStatus.FillWeight = 100.748665F;
             colStatus.HeaderText = "Durum";
             colStatus.MinimumWidth = 6;
             colStatus.Name = "colStatus";
@@ -78,6 +82,7 @@
             // 
             // colUpdate
             // 
+            colUpdate.FillWeight = 100.748665F;
             colUpdate.HeaderText = "Güncelle";
             colUpdate.MinimumWidth = 6;
             colUpdate.Name = "colUpdate";
@@ -93,11 +98,21 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = Color.Red;
             colDelete.DefaultCellStyle = dataGridViewCellStyle1;
+            colDelete.FillWeight = 100.748665F;
             colDelete.HeaderText = "Sil";
             colDelete.MinimumWidth = 6;
             colDelete.Name = "colDelete";
             colDelete.Text = "X";
             colDelete.UseColumnTextForButtonValue = true;
+            // 
+            // colStatusUpdate
+            // 
+            colStatusUpdate.FillWeight = 96.25668F;
+            colStatusUpdate.HeaderText = "Statü Değiştir";
+            colStatusUpdate.MinimumWidth = 6;
+            colStatusUpdate.Name = "colStatusUpdate";
+            colStatusUpdate.Text = "S";
+            colStatusUpdate.UseColumnTextForButtonValue = true;
             // 
             // DepartmentList
             // 
@@ -120,5 +135,6 @@
         private DataGridViewTextBoxColumn colStatus;
         private DataGridViewButtonColumn colUpdate;
         private DataGridViewButtonColumn colDelete;
+        private DataGridViewButtonColumn colStatusUpdate;
     }
 }

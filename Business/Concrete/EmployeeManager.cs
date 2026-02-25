@@ -27,7 +27,7 @@ namespace Business.Concrete
             {
                 var result = _employeeDal.CheckIdentityNumber(employee.IdentityNumber);
 
-                if (result > 0)
+                if (!result)
                 {
                     MessageBox.Show("Bu TC Kimlik numarası zaten kayıtlı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;

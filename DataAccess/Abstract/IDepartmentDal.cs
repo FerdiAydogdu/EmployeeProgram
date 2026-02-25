@@ -9,5 +9,7 @@ namespace DataAccess.Abstract
         void Delete(Department department);
         void Update(Department department);
         Department GetById(int departmentId);
+        bool CheckDepartmentUses(int departmentId);
+        void StatusChange(Department department);
     }
 }

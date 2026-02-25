@@ -60,6 +60,15 @@ namespace EmployeeUI
                         GetList();
                     }
                 }
+                if (dgwDepartmentList.Columns[e.ColumnIndex].Name == "colStatusUpdate")
+                {
+                    int departmentId = Convert.ToInt32(dgwDepartmentList.CurrentRow.Cells["colId"].Value);
+                    var findDepartment = _departmentService.GetById(departmentId);
+
+                    _departmentService.StatusChange(findDepartment);
+                }
+
+                GetList();
             }
         }
     }

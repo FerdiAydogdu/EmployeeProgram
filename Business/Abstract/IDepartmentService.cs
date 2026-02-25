@@ -10,5 +10,6 @@ namespace Business.Abstract
         bool Update(Department department);
         Department GetById(int departmentId);
         int GetDepartmentIdByName(string departmentName);
+        bool StatusChange(Department department);
     }
 }

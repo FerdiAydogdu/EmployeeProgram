@@ -33,6 +33,13 @@ namespace Business.Concrete
 
         public void Delete(Department department)
         {
+            var result = _departmentDal.CheckDepartmentUses(department.Id);
+
+            if (!result)
+            {
+                MessageBox.Show("Bu bölüme atanmış personeller olduğundan bölüm silinemiyor!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             _departmentDal.Delete(department);
         }
 
@@ -49,6 +56,13 @@ namespace Business.Concrete
         public List<Department> GetList()
         {
             return _departmentDal.GetList();
+        }
+
+        public bool StatusChange(Department department)
+        {
+            _departmentDal.StatusChange(department);
+            MessageBox.Show("Durum başarıyla güncellendi.", "Güncelleme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
         }
 
         public bool Update(Department department)

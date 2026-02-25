@@ -20,12 +20,12 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public int CheckIdentityNumber(string identityNumber)
+        public bool CheckIdentityNumber(string identityNumber)
         {
             using (var context = new EmployeeDbContext())
             {
                 var result = context.Employees.Where(e => e.IdentityNumber == identityNumber);
-                return result.Count();
+                return result.Count() > 0 ? false : true;
             }
         }
 
