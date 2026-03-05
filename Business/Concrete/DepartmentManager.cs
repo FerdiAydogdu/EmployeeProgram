@@ -45,7 +45,7 @@ namespace Business.Concrete
 
         public Department GetById(int departmentId)
         {
-            return _departmentDal.GetById(departmentId);
+            return _departmentDal.Get(g => g.Id == departmentId);
         }
 
         public int GetDepartmentIdByName(string departmentName)

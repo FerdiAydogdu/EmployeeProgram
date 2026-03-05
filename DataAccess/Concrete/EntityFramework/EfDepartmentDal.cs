@@ -1,20 +1,12 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Context;
 using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfDepartmentDal : IDepartmentDal
+    public class EfDepartmentDal : EfEntityRepositoryBase<Department, EmployeeDbContext>, IDepartmentDal
     {
-        public void Add(Department department)
-        {
-            using (var context = new EmployeeDbContext())
-            {
-                context.Departments.Add(department);
-                context.SaveChanges();
-            }
-        }
-
         public bool CheckDepartmentUses(int departmentId)
         {
             using (var context = new EmployeeDbContext())
@@ -24,31 +16,20 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void Delete(Department department)
-        {
-            using (var context = new EmployeeDbContext())
-            {
-                context.Departments.Remove(department);
-                context.SaveChanges();
-            }
-        }
-
-        public Department GetById(int departmentId)
-        {
-            using (var context = new EmployeeDbContext())
-            {
-                //var result = context.Departments.Find(departmentId);
-                var result = context.Departments.Where(c=> c.Id == departmentId).FirstOrDefault();
-                return result;
-            }
-        }
-
         public List<Department> GetList()
         {
             using (var context = new EmployeeDbContext())
             {
-                var result = context.Departments.ToList();
-                return result;
+                //var result = context.Departments.ToList();
+                var result = from department in context.Departments
+                             select new Department
+                             {
+                                 Id = department.Id,
+                                 Name = department.Name.ToUpper(),
+                                 Status = department.Status 
+                             };
+
+                return result.ToList();
             }
         }
 
@@ -56,20 +37,11 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (var context = new EmployeeDbContext())
             {
-                if (department.Status == true)                
-                    department.Status = false;                
-                else                
+                if (department.Status == true)
+                    department.Status = false;
+                else
                     department.Status = true;
-               
-                context.Departments.Update(department);
-                context.SaveChanges();
-            }
-        }
 
-        public void Update(Department department)
-        {
-            using (var context = new EmployeeDbContext())
-            {
                 context.Departments.Update(department);
                 context.SaveChanges();
             }

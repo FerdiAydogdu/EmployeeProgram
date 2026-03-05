@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public List<Employee> GetAll()
         {
-            return _employeeDal.GetAll();
+            return _employeeDal.GetList();
         }
     }
 }

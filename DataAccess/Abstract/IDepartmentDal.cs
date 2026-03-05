@@ -1,14 +1,12 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface IDepartmentDal
+    public interface IDepartmentDal : IEntityRepository<Department>
     {
         List<Department> GetList();
-        void Add(Department department);
-        void Delete(Department department);
-        void Update(Department department);
-        Department GetById(int departmentId);
+        //Department GetById(int departmentId);
         bool CheckDepartmentUses(int departmentId);
         void StatusChange(Department department);
     }

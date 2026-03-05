@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Context;
 using Entities.Concrete;
 using System;
@@ -9,31 +10,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfEmployeeDal : IEmployeeDal
+    public class EfEmployeeDal : EfEntityRepositoryBase<Employee, EmployeeDbContext>, IEmployeeDal
     {
-        public void Add(Employee employee)
-        {
-            using (var context = new EmployeeDbContext())
-            {
-                context.Employees.Add(employee);
-                context.SaveChanges();
-            }
-        }
-
         public bool CheckIdentityNumber(string identityNumber)
         {
             using (var context = new EmployeeDbContext())
             {
                 var result = context.Employees.Where(e => e.IdentityNumber == identityNumber);
                 return result.Count() > 0 ? false : true;
-            }
-        }
-
-        public List<Employee> GetAll()
-        {
-            using (var context = new EmployeeDbContext())
-            {
-                return context.Employees.ToList();
             }
         }
     }
